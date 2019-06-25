@@ -13,12 +13,12 @@ export const Container = styled.View`
 `;
 
 export const Card = styled.View`
-  width: 90%;
+  min-width: 70%;
   margin: 0 5%;
 
-  margin-top: 16px;
+  margin-top: 20px;
 
-  background-color: white;
+  background-color: ${props => (props.color == 0 ? Background : Secondary)};
 `;
 
 export const CardHeader = styled.View`
@@ -40,9 +40,9 @@ export const Botoes = styled.View`
   align-items: center;
 `;
 
-export const Pagar = styled.Text``;
+export const Pagar = styled.TouchableOpacity``;
 
-export const Excluir = styled.Text``;
+export const Excluir = styled.TouchableOpacity``;
 
 export const Descricao = styled.Text`
   font-size: 16px;

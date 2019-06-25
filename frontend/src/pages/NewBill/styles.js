@@ -47,7 +47,9 @@ export const Submit = styled.TouchableOpacity`
 
 export const TextSubmit = styled.Text``;
 
-export const Text = styled.Text``;
+export const Text = styled.Text`
+  color: white;
+`;
 
 export const Switch = styled.Switch`
   margin-top: 15px;

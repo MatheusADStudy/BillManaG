@@ -9,12 +9,17 @@ import {
   Input,
   Submit,
   TextSubmit,
-  Switch
+  Switch,
+  Text
 } from "./styles";
 
 import api from "./../../services/api";
 
 export default class New extends Component {
+  static navigationOptions = {
+    header: null
+  };
+
   state = {
     title: "",
     description: "",
@@ -36,7 +41,7 @@ export default class New extends Component {
       state: 0
     });
 
-    this.props.navigation.navigate("ListBill");
+    this.props.navigation.navigate("Home");
   };
 
   render() {
@@ -67,7 +72,7 @@ export default class New extends Component {
             onChangeText={amount => this.setState({ amount })}
           />
         </CardForm>
-        <TextSubmit>Parcelado ?</TextSubmit>
+        <Text>Parcelado ?</Text>
         <Switch
           value={this.state.isParcels}
           onValueChange={isParcels => this.setState({ isParcels })}

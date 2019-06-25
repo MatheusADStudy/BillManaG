@@ -26,9 +26,18 @@ module.exports = {
     req.io.emit('bill', bill);
     return res.json(bill);
   },
-  async update(req, res) {
-    const contas = await Bill.findByIdAndUpdate(req.params.id, req.body, { new: true });
+  async paid(req, res) {
+    const bill = await Bill.findByIdAndUpdate(req.params.id, req.body, { new: true });
 
-    return res.json(contas);
+    req.io.emit('paid', bill);
+
+    return res.json(bill);
+  },
+  async inactive(req, res) {
+    const bill = await Bill.findByIdAndUpdate(req.params.id, req.body, { new: true });
+
+    req.io.emit('inactive', bill);
+
+    return res.json(bill);
   },
 };
