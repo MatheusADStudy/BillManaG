@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import moment from "moment";
 
 import {
   Container,
@@ -63,7 +64,9 @@ export default class ListBill extends Component {
                 <Parcela>Parcela: {item.parcels}</Parcela>
               </CardBody>
               <CardFooter>
-                <UpdatedAt>Atualizado em: {item.updatedAt}</UpdatedAt>
+                <UpdatedAt>
+                  Atualizado em: {moment(item.UpdatedAt).format("dd/MM/YYYY")}
+                </UpdatedAt>
               </CardFooter>
             </Card>
           )}
